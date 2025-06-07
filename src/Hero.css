@@ -111,12 +111,35 @@
   position: relative;
 }
 
-.nav-hover:hover .modal-overlay {
-  opacity: 1;
-  visibility: visible;
+.nav-hover .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  border: none;
+  border-radius: 4px;
+  padding: 1rem;
+  z-index: 1000;
+  display: none;
+}
+
+.nav-hover .dropdown-menu.show {
+  display: block;
+}
+
+.nav-hover:hover .nav-link {
+  color: #fff !important;
+}
+
+/* Add transition for smooth hover effect */
+.nav-hover .nav-link {
+  transition: color 0.3s ease;
 }
 
 .modal-content {
+  top:47px;
   background: white;
   width: 100%;
   max-width: 1400px; /* or your preferred max-width */
