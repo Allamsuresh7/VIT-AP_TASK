@@ -1,0 +1,154 @@
+.university-footer {
+  background-color: #fff;
+  color: #222;
+}
+
+.footer-quote-section {
+  background-color: #7a1620;
+  color: #fff;
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.footer-quote-text {
+  font-family: 'Emilio Test', serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.footer-quote-author {
+  font-family: 'Emilio Test', serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.footer-main-content {
+  background-color: #f3f3f6;
+  color: #222;
+  padding: 40px 0;
+}
+
+.footer-section-title {
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links-list li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer-map-container {
+  margin-bottom: 16px;
+  transition: transform 0.3s ease;
+}
+
+.footer-map-container:hover {
+  transform: translateY(-5px);
+}
+
+.footer-map-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.footer-address-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.footer-address-text {
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.footer-directions-link {
+  color: #7a1620;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-directions-link:hover {
+  color: #9a1620;
+}
+
+.footer-directions-link:hover .footer-directions-arrow {
+  transform: translateX(3px);
+}
+
+.footer-directions-arrow {
+  transition: transform 0.2s ease;
+}
+
+.footer-main-bar {
+  background-color: #fff;
+  color: #222;
+  padding: 20px 0;
+}
+
+.footer-main-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 15px;
+}
+
+.footer-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.footer-logo-text {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.footer-main-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-main-link {
+  color: #222;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon-link svg {
+  fill: #7a1620;
+  stroke: #7a1620;
+}
+
+.footer-copyright {
+  background-color: #7a1620;
+  color: #fff;
+  padding: 20px 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer-copyright-text {
+  margin-left: 10px;
+}

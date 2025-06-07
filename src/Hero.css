@@ -1,0 +1,988 @@
+/* Hero Background Section */
+.hero-section {
+  width: 100%;
+  height: 960px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Top Maroon Bar */
+.bg-maroon {
+  background-color: #7a0019;
+}
+
+/* Navbar */
+.vit-navbar {
+  background-color: transparent;
+  border-top: 1px solid #ccc;
+  backdrop-filter: blur(5px);
+}
+
+/* Navigation Links */
+.navbar-nav .nav-link {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: capitalize;
+  color: #FDFEFF;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #FDFEFF;
+  opacity: 0.9;
+}
+
+/* VIT-AP Logo Text */
+.navbar-brand .text-white div {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1;
+}
+
+/* Top Bar Icons and Items */
+.top-bar .bi {
+  margin-right: 5px;
+}
+
+.top-bar span,
+.top-bar i {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Responsive Text Sizes (Optional) */
+@media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    font-size: 16px;
+  }
+}
+.top-bar {
+  width: 100%;              /* Full width for responsiveness */
+  max-width: 1520px;        /* Matches Figma width */
+  height: 60px;             /* Figma height */
+  background-color: #7b001c; /* VIT-AP Maroon, adjust if needed */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 10;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto; /* Center inside viewport */
+}
+
+.top-bar .right-section span,
+.top-bar .left-section span {
+  color: #fff;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1050;
+  padding: 80px 40px 40px; /* top, horizontal, bottom padding */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav-hover {
+  position: relative;
+}
+
+.nav-hover:hover .modal-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: white;
+  width: 100%;
+  max-width: 1400px; /* or your preferred max-width */
+  height: calc(100vh - 120px); /* adjusted for top and bottom padding */
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-overlay.show .modal-content {
+  transform: translateY(0);
+}
+
+.modal-header {
+  padding: 1.5rem 2rem; /* increased padding */
+  border-bottom: 1px solid #dee2e6;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  color: #333;
+}
+
+.close-button:hover {
+  color: #666;
+}
+
+.about-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  background-color: white;
+  font-size: 0.9rem;
+}
+
+.about-content h5 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.about-content li {
+  padding: 4px 0;
+  transition: all 0.3s ease;
+}
+
+.about-content li:hover {
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 30%;
+  padding: 2rem;
+  border-right: 1px solid #dee2e6;
+}
+
+.content-wrapper {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.about-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Navigation Items Styling */
+.list-unstyled {
+  margin: 0;
+  padding: 0;
+}
+
+.list-unstyled li {
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #333;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.list-unstyled li:hover {
+  color: #7b001c;
+  text-decoration: underline;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+/* Vertical line between sidebar and content */
+.sidebar::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 0;
+  height: 80%;
+  width: 1px;
+  background-color: #dee2e6;
+}
+
+/* Image container with text overlay */
+.content-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: white;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .sidebar,
+  .content-wrapper {
+    width: 100%;
+  }
+
+  .sidebar::after {
+    display: none;
+  }
+
+  .about-image {
+    height: 300px;
+  }
+}
+
+/* Add these styles to your existing CSS */
+.career-image-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.career-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.career-image-container h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.career-image-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.campus-content {
+  display: flex;
+  height: 100%;
+  background-color: white;
+}
+
+.w-33 {
+  width: 33.333%;
+}
+
+.section h5 {
+  color: #7b001c;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.section li {
+  font-size: 0.95rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.section li:hover {
+  color: #7b001c;
+}
+
+@media (max-width: 768px) {
+  .campus-content {
+    flex-direction: column;
+  }
+  
+  .w-33 {
+    width: 100%;
+  }
+  
+  .section {
+    border-right: none !important;
+    border-bottom: 1px solid #dee2e6;
+  }
+}
+
+/* Research Page Styles */
+.research-content {
+  display: flex;
+  height: 100%;
+  background-color: white;
+}
+
+.research-content .sidebar {
+  padding: 2rem;
+}
+
+.research-content li {
+  font-size: 1rem;
+  color: #333;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.research-content li:hover {
+  color: #7b001c;
+}
+
+/* Programmes Submenu Styles */
+.programmes-submenu {
+  position: absolute;
+  left: calc(100% + 20px); /* Add some spacing from the main menu */
+  top: -10px;
+  background-color: white;
+  padding: 1rem;
+  min-width: 250px;
+  list-style: none;
+  z-index: 1000;
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+}
+
+.programmes-submenu li {
+  padding: 0.8rem 1rem;
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: none;
+  position: relative;
+  font-size: 1rem;
+}
+
+.programmes-submenu li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  height: 80%;
+  width: 1px;
+  background-color: #dee2e6;
+  transform: translateY(-50%);
+}
+
+.programmes-submenu li:hover {
+  color: #7b001c;
+  text-decoration: underline;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+/* Undergraduate Submenu Styles */
+.undergraduate-submenu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 1rem;
+  border-radius: 4px;
+  display: flex;
+  gap: 2rem;
+  min-width: 400px;
+  z-index: 1000;
+}
+
+.engineering-section,
+.management-section {
+  flex: 1;
+}
+
+.engineering-section h4,
+.management-section h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.undergraduate-submenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.undergraduate-submenu li {
+  padding: 0.3rem 0;
+  white-space: nowrap;
+}
+
+/* Dual Degree Submenu Styles */
+.dual-degree-submenu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 1rem;
+  border-radius: 4px;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+.dual-degree-submenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dual-degree-submenu li {
+  padding: 0.3rem 0;
+  white-space: nowrap;
+  color: #333;
+}
+
+.dual-degree-submenu li:hover {
+  color: #7b001c;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Integrated Submenu Styles */
+.integrated-submenu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 1rem;
+  border-radius: 4px;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+.integrated-submenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.integrated-submenu li {
+  padding: 0.3rem 0;
+  white-space: nowrap;
+  color: #333;
+}
+
+.integrated-submenu li:hover {
+  color: #7b001c;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.integrated-section h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+/* Postgraduate Submenu Styles */
+.postgraduate-submenu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 1rem;
+  border-radius: 4px;
+  display: flex;
+  gap: 2rem;
+  min-width: 600px;
+  z-index: 1000;
+}
+
+.schools-section,
+.courses-section {
+  flex: 1;
+}
+
+.schools-section h4,
+.courses-section h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.postgraduate-submenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.postgraduate-submenu li {
+  padding: 0.3rem 0;
+  white-space: nowrap;
+  color: #333;
+}
+
+.postgraduate-submenu li:hover {
+  color: #7b001c;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Ph.D. Submenu Styles */
+.phd-submenu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 1rem;
+  border-radius: 4px;
+  min-width: 400px;
+  z-index: 1000;
+}
+
+.phd-section h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.phd-submenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.phd-submenu li {
+  padding: 0.3rem 0;
+  white-space: nowrap;
+  color: #333;
+}
+
+.phd-submenu li:hover {
+  color: #7b001c;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+  .research-content .sidebar {
+    padding: 1rem;
+  }
+}
+
+.section-heading {
+  color: #000;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.research-list {
+  padding-top: 20px;
+}
+
+.research-list li {
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+}
+
+.research-list li:first-child {
+  margin-top: 0;
+}
+
+.research-list li:hover {
+  background-color: #f8f9fa;
+  cursor: pointer;
+  color: #7b001c;
+  font-weight: bold;
+}
+
+/* Update the vertical line */
+.border-end {
+  position: relative;
+}
+
+.border-end::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #dee2e6;
+}
+
+.centers-item {
+  position: relative;
+  text-decoration: underline;
+}
+
+.center-fields {
+  padding-top: 0;
+}
+
+.center-fields li {
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+
+.center-fields li:hover {
+  background-color: #f8f9fa;
+  color: #7b001c;
+  cursor: pointer;
+}
+
+.iiec-item {
+  position: relative;
+  text-decoration: underline;
+}
+
+.iiec-fields {
+  padding-top: 0;
+}
+
+.iiec-fields li {
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+
+.iiec-fields li:hover {
+  background-color: #f8f9fa;
+  color: #7b001c;
+  cursor: pointer;
+}
+
+.stats-section {
+  background-color: #fff;
+  padding: 40px 0;
+}
+
+.equal-height {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left-section, 
+.right-section {
+  padding: 0 40px;
+
+}
+
+
+.content-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  color: #7b001c;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.university-image-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.university-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.university-description {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 1.5rem 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: auto;
+}
+
+.announcements-list {
+  height: calc(100% - 60px);
+  overflow-y: auto;
+}
+
+.announcement-item {
+  padding: 15px 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.announcement-date {
+  color: #6c757d;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.announcement-title {
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .left-section, 
+  .right-section {
+    padding: 0 20px; /* Reset padding on mobile */
+  }
+  
+  .content-container {
+    margin-bottom: 30px;
+  }
+  
+  .announcements-section {
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .university-image-container,
+  .university-description {
+    width: 100%;
+  }
+}
+
+.stats-container {
+  padding: 0 100px;
+   padding: 0 100px;
+  max-width: 1200px;  /* or your desired width */
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .stats-container {
+    padding: 0 20px;
+  }
+}
+
+.stat-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+.stat-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #7a1620;
+  margin-bottom: 1.5rem;
+}
+
+.announcements-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #7a1620;
+  margin-bottom: 2rem;
+}
+
+.view-more-link {
+  color: #7a1620;
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.view-more-bar {
+  display: inline-block;
+  width: 32px;
+  height: 6px;
+  background: #e5d3d3;
+  margin-left: 0.5rem;
+  border-radius: 2px;
+  position: relative;
+  top: 2px;
+}
+
+.announcement-item {
+  margin-bottom: 1.5rem;
+}
+
+.announcement-date {
+  font-size: 0.95rem;
+  color: #888;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.announcement-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0.2rem 0 0.5rem 0;
+}
+
+.announcement-divider {
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  margin: 0.7rem 0 0 0;
+}
+
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem 4rem;
+  margin-top: 2.5rem;
+  justify-content: flex-start;
+}
+
+.stat-item {
+  min-width: 160px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+.stat-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #7a1620;
+  margin-bottom: 0.2rem;
+  letter-spacing: 2px;
+}
+
+.plus-sign {
+  font-size: 2rem;
+  color: #7a1620;
+  margin-left: 0.1em;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: #7a1620;
+  font-weight: 500;
+  margin-top: 0.2rem;
+}
+
+.university-description {
+  font-size: 1.25rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 991px) {
+  .about-title {
+    font-size: 2.2rem;
+  }
+  .announcements-title {
+    font-size: 1.2rem;
+  }
+  .stats-grid {
+    gap: 1.5rem 2rem;
+    margin-top: 1.5rem;
+  }
+  .stat-item {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-title {
+    font-size: 1.5rem;
+  }
+  .announcements-title {
+    font-size: 1rem;
+  }
+  .stats-grid {
+    gap: 1rem 1rem;
+    margin-top: 1rem;
+  }
+  .stat-item {
+    min-width: 90px;
+  }
+}
+
+.hover-effect {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hover-effect:hover {
+  color:  #7a0019; 
+  text-decoration: underline;
+}
+
+
+
+
